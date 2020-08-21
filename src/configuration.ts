@@ -1,4 +1,5 @@
 import { load } from 'dotenv-extended';
+import { join } from "path";
 
 load({
     path: '.env',
@@ -7,7 +8,8 @@ load({
 });
 
 function getStorageRoot(): string {
-    return process.env.STORAGE_ROOT;
+    const uploadFolder = process.env.STORAGE_ROOT;
+    return join(__dirname, '..', uploadFolder);
 }
 
 function getMaxFileSize(): number {
