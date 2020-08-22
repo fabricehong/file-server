@@ -1,6 +1,9 @@
 import { load } from 'dotenv-extended';
 import { join } from "path";
 
+
+const DEFAULT_STORAGE_SUBFOLDER = 'uploads';
+
 load({
     path: '.env',
     defaults: '.env.defaults',
@@ -9,14 +12,22 @@ load({
 
 function getStorageRoot(): string {
     const uploadFolder = process.env.STORAGE_ROOT;
-    return join(__dirname, '..', uploadFolder);
+    if (uploadFolder) {
+        return uploadFolder;
+    }
+
+    return join(__dirname, '..', DEFAULT_STORAGE_SUBFOLDER);
 }
 
 function getMaxFileSize(): number {
     return Number(process.env.MAX_FILE_SIZE);
 }
 
+function getServerPort(): number {
+    return Number(process.env.SERVER_PORT);
+}
 export const configuration = {
     getStorageRoot,
-    getMaxFileSize
+    getMaxFileSize,
+    getServerPort
 };
