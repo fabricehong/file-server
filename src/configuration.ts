@@ -31,9 +31,14 @@ function getJwtSecret(): string {
     return process.env.JWT_SECRET;
 }
 
+function getFilesExpirationMinutes(): number {
+    return Number(process.env.FILES_EXPIRATION_MINUTES);
+}
+
 export const configuration = {
     getStorageRoot,
     getMaxFileSize,
     getServerPort,
-    getJwtSecret
+    getJwtSecret,
+    getFilesExpirationMinutes
 };
