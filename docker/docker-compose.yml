@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  boldor-file-server:
+    image: boldor-file-server
+    container_name: boldor-file-server
+    restart: always
+    ports:
+      - 8090:3000
+    environment:
+      STORAGE_ROOT: '/uploads'
+      MAX_FILE_SIZE: 5000
+      SERVER_PORT: 3000
+      JWT_SECRET: cr7
