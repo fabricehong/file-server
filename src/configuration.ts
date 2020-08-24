@@ -26,8 +26,14 @@ function getMaxFileSize(): number {
 function getServerPort(): number {
     return Number(process.env.SERVER_PORT);
 }
+
+function getJwtSecret(): string {
+    return process.env.JWT_SECRET;
+}
+
 export const configuration = {
     getStorageRoot,
     getMaxFileSize,
-    getServerPort
+    getServerPort,
+    getJwtSecret
 };
