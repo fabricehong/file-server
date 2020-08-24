@@ -1,5 +1,5 @@
 import { load } from 'dotenv-extended';
-import { join } from "path";
+import { join } from 'path';
 
 
 const DEFAULT_STORAGE_SUBFOLDER = 'uploads';
