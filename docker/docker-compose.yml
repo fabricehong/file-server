@@ -12,3 +12,4 @@ services:
       MAX_FILE_SIZE: 5000
       SERVER_PORT: 3000
       JWT_SECRET: cr7
+      FILES_EXPIRATION_MINUTES: 60
